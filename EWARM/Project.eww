@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\psopd2v.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>psopd2v</name>
+      <member>
+        <project>psopd2v</project>
+        <configuration>psopd2v</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+
