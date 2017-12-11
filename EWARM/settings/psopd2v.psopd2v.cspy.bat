@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\common\bin\cspybat" -f "D:\WORK\stm32work\psopdf2v500Hz\EWARM\settings\psopd2v.psopd2v.general.xcl" --backend -f "D:\WORK\stm32work\psopdf2v500Hz\EWARM\settings\psopd2v.psopd2v.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\common\bin\cspybat" -f "D:\WORK\stm32work\psopd500ampli\EWARM\settings\psopd2v.psopd2v.general.xcl" --backend -f "D:\WORK\stm32work\psopd500ampli\EWARM\settings\psopd2v.psopd2v.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\common\bin\cspybat" -f "D:\WORK\stm32work\psopdf2v500Hz\EWARM\settings\psopd2v.psopd2v.general.xcl" "--debug_file=%~1" --backend -f "D:\WORK\stm32work\psopdf2v500Hz\EWARM\settings\psopd2v.psopd2v.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\common\bin\cspybat" -f "D:\WORK\stm32work\psopd500ampli\EWARM\settings\psopd2v.psopd2v.general.xcl" "--debug_file=%~1" --backend -f "D:\WORK\stm32work\psopd500ampli\EWARM\settings\psopd2v.psopd2v.driver.xcl" 
 
 @echo off 
 :end

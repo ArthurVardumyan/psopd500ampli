@@ -35,10 +35,12 @@
   *
   ******************************************************************************
   */
+
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_hal.h"
 #include "adc.h"
+#include "dma.h"
 #include "i2c.h"
 #include "spi.h"
 #include "usart.h"
@@ -64,6 +66,7 @@
     readout_packet_t packet;
     uint32_t odr_time_us;
     uint8_t drdy_int = 0;
+    uint16_t ampli[8] = {0};
     
     //dsp
     float32_t dsp_res1[ELECTRODESNUMBER];
@@ -71,6 +74,7 @@
     
     extern uint32_t redled_counter;
     extern uint32_t greenled_counter;
+    extern DMA_HandleTypeDef hdma_adc1;
 
 /* USER CODE END PV */
 
@@ -111,6 +115,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_ADC1_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
@@ -119,13 +124,14 @@ int main(void)
   MX_USART1_UART_Init();
 
   /* USER CODE BEGIN 2 */
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&ampli[0], 8);
+  
   AD7779_VIBRO_DISABLE;
   RED_LED_DIS;
   GREEN_LED_DIS;
   BLUE_LED_DIS;
   
   /* На время инициализации АЦП включаем красный светодиод. */
-     
   RED_LED_EN;
   AD7779_PWR_ENABLE;
   HAL_Delay(1000);
@@ -220,9 +226,10 @@ for (i = AD7779_REG_CH_CONFIG(0); i <= AD7779_REG_SRC_UPDATE; i++)
     scale_redout(&ad7779device, dsp_res1);
     //dsp
     dsp_pocess();
+    uint16_t adcscale = adc_scale();
     for (i=0; i<ELECTRODESNUMBER; i++)
     {
-      packet.payload.readout[i] = dsp_res2[i];
+      packet.payload.readout[i] = adcscale * dsp_res2[i];
     }
     
     // Prepare Packet

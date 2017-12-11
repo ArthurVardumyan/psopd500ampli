@@ -6,7 +6,7 @@
   </project>
   <batchBuild>
     <batchDefinition>
-      <name>psopd2v</name>
+      <name>psopd500ampli</name>
       <member>
         <project>psopd2v</project>
         <configuration>psopd2v</configuration>

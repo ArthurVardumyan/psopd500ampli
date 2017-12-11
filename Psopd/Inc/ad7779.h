@@ -453,6 +453,8 @@ void scale_redout(ad7779_dev *dev, float* sdout );
 
 void adc_read_sd(ad7779_dev *dev);
 
+uint16_t adc_scale(void);
+
 /* Initialize the device. */
 //int32_t ad7779_setup(ad7779_dev *dev, ad7779_init_param init_param);
 int32_t ad7779_setup(ad7779_dev *dev);

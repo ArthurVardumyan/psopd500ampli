@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * File Name          : main.h
+  * File Name          : main.hpp
   * Description        : This file contains the common defines of the application
   ******************************************************************************
   ** This notice applies to any and all portions of this file
@@ -39,7 +39,9 @@
 #ifndef __MAIN_H
 #define __MAIN_H
   /* Includes ------------------------------------------------------------------*/
+#include "stm32f4xx_hal.h"
 
+/* Includes ------------------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -62,8 +64,8 @@
 #define MPU_INT_GPIO_Port GPIOA
 #define CHG_SENS_Pin GPIO_PIN_0
 #define CHG_SENS_GPIO_Port GPIOB
-#define VBAT_ADC_Pin GPIO_PIN_1
-#define VBAT_ADC_GPIO_Port GPIOB
+#define Ampli_Pin GPIO_PIN_1
+#define Ampli_GPIO_Port GPIOB
 #define DRDY_INT_Pin GPIO_PIN_2
 #define DRDY_INT_GPIO_Port GPIOB
 #define DRDY_INT_EXTI_IRQn EXTI2_IRQn
@@ -82,13 +84,26 @@
 #define RF_RX_Pin GPIO_PIN_7
 #define RF_RX_GPIO_Port GPIOB
 
+/* ########################## Assert Selection ############################## */
+/**
+  * @brief Uncomment the line below to expanse the "assert_param" macro in the 
+  *        HAL drivers code
+  */
+/* #define USE_FULL_ASSERT    1U */
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
 
+#ifdef __cplusplus
+ extern "C" {
+#endif
 void _Error_Handler(char *, int);
 
 #define Error_Handler() _Error_Handler(__FILE__, __LINE__)
+#ifdef __cplusplus
+}
+#endif
 
 /**
   * @}

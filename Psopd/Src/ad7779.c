@@ -54,6 +54,7 @@ extern uint32_t greenled_counter;
 extern ad7779_dev   ad7779device;
 extern readout_packet_t packet;
 extern uint32_t odr_time_us;
+extern uint16_t ampli[8];
 
 /******************************************************************************/
 /*************************** Constants Definitions ****************************/
@@ -1002,6 +1003,7 @@ int32_t i24toi32( uint32_t x )
 void scale_redout(ad7779_dev *dev, float* sdout )
 {
 	const double u_quant = 2.5 / 8388607; //2.5 / 16777216.0;
+        //const double u_quant = 1/3355442.8f;
 	const uint8_t gain_table[] = { 1 , 2 , 4 , 8 };
 	const uint8_t channel_ords[] = { 3 , 2 , 1 , 0 , 4 , 5 , 6, 7 };
 
@@ -1013,9 +1015,20 @@ void scale_redout(ad7779_dev *dev, float* sdout )
                                      ( readout_buffer[ idx * 4 + 1  ] << 16 ) +
 				    ( readout_buffer[ idx * 4 + 2 ] << 8 ) +
                                     ( readout_buffer[ idx * 4 + 3 ] ) );
-		sdout[ i ] = x * u_quant / gain_table[dev->gain[i]];
+		sdout[ i ] = (x * u_quant) / gain_table[dev->gain[i]];
 
 	}
+}
+
+uint16_t adc_scale(void)
+{
+  uint32_t res;
+  res =0;
+  for (uint8_t i=0; i<8; i++)
+  {
+    res += ampli[i];
+  }
+  return ((uint16_t)(res >>3));
 }
 
 

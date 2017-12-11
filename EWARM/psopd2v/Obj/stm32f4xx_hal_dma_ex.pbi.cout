@@ -1,20 +1,20 @@
-"D:\WORK\stm32work\psopdf2v1000Hz\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c"
+"D:\WORK\stm32work\psopd500ampli\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c"
 -std=c99
 -ferror-limit=100
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\EWARM/../Inc
+D:\WORK\stm32work\psopd500ampli\EWARM/../Inc
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\EWARM/../Drivers/STM32F4xx_HAL_Driver/Inc
+D:\WORK\stm32work\psopd500ampli\EWARM/../Drivers/STM32F4xx_HAL_Driver/Inc
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\EWARM/../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
+D:\WORK\stm32work\psopd500ampli\EWARM/../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\EWARM/../Drivers/CMSIS/Device/ST/STM32F4xx/Include
+D:\WORK\stm32work\psopd500ampli\EWARM/../Drivers/CMSIS/Device/ST/STM32F4xx/Include
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\EWARM/../Drivers/CMSIS/Include
+D:\WORK\stm32work\psopd500ampli\EWARM/../Drivers/CMSIS/Include
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\EWARM\..\Psopd\Inc
+D:\WORK\stm32work\psopd500ampli\EWARM\..\Psopd\Inc
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\EWARM\..\DSP\Inc
+D:\WORK\stm32work\psopd500ampli\EWARM\..\DSP\Inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\CMSIS\Include
 -I
@@ -22,19 +22,19 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\inc\c
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\Inc
+D:\WORK\stm32work\psopd500ampli\Inc
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\Drivers\STM32F4xx_HAL_Driver\Inc
+D:\WORK\stm32work\psopd500ampli\Drivers\STM32F4xx_HAL_Driver\Inc
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy
+D:\WORK\stm32work\psopd500ampli\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+D:\WORK\stm32work\psopd500ampli\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\Drivers\CMSIS\Include
+D:\WORK\stm32work\psopd500ampli\Drivers\CMSIS\Include
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\Psopd\Inc
+D:\WORK\stm32work\psopd500ampli\Psopd\Inc
 -I
-D:\WORK\stm32work\psopdf2v1000Hz\DSP\Inc
+D:\WORK\stm32work\psopd500ampli\DSP\Inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\CMSIS\Include
 -DUSE_HAL_DRIVER=1
